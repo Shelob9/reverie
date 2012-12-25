@@ -50,7 +50,9 @@
 					<h4 class="subheader"><?php bloginfo('description'); ?></h4>
 				</div>
 				<nav role="navigation" class="hide-for-small top-nav">
-					<?php the_breadcrumb(); ?>
+					<?php the_breadcrumb() ?>"
+				
+					
 				</nav>
 				<p class="show-for-small">
 					<a class='sidebar-button button' id="sidebarButton" href="#sidebar-off" >Menu</a>
