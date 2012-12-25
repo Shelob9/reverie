@@ -299,4 +299,7 @@ function the_breadcrumb() {
 		}
 	}
 }
+
+//main nav bar
+
 ?>

@@ -49,7 +49,7 @@
 					<h1><a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a></h1>
 					<h4 class="subheader"><?php bloginfo('description'); ?></h4>
 				</div>
-				<nav role="navigation" class="hide-for-small top-nav" id="main-menu">
+				<nav role="navigation" class="hide-for-small top-nav">
 					<?php
 						if ( has_nav_menu( 'primary_navigation' ) ):
 					    	wp_nav_menu( array(
