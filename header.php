@@ -49,8 +49,27 @@
 					<h1><a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a></h1>
 					<h4 class="subheader"><?php bloginfo('description'); ?></h4>
 				</div>
-				<nav role="navigation" class="hide-for-small top-nav">
-					<?php the_breadcrumb() ?>"
+				<nav role="navigation" class="hide-for-small top-nav" id="main-menu">
+					<?php
+						if ( has_nav_menu( 'primary_navigation' ) ):
+					    	wp_nav_menu( array(
+								'theme_location' => 'primary_navigation',
+								'container' =>false,
+								'menu_class' => '',
+								'echo' => true,
+								'before' => '',
+								'after' => '',
+								'link_before' => '',
+								'link_after' => '',
+								'depth' => 0,
+								'items_wrap' => '<ul class="nav-bar">%3$s</ul>',
+								'walker' => new reverie_walker())
+							);
+						endif;
+						?>
+				</nav>
+				<nav role="navigation" class="hide-for-small top-nav" id="breadcrumbs">
+					<?php the_breadcrumb() ?>
 				
 					
 				</nav>
