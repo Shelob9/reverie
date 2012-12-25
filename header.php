@@ -50,23 +50,7 @@
 					<h4 class="subheader"><?php bloginfo('description'); ?></h4>
 				</div>
 				<nav role="navigation" class="hide-for-small top-nav">
-					<?php
-						if ( has_nav_menu( 'primary_navigation' ) ):
-					    	wp_nav_menu( array(
-								'theme_location' => 'primary_navigation',
-								'container' =>false,
-								'menu_class' => '',
-								'echo' => true,
-								'before' => '',
-								'after' => '',
-								'link_before' => '',
-								'link_after' => '',
-								'depth' => 0,
-								'items_wrap' => '<ul class="nav-bar">%3$s</ul>',
-								'walker' => new reverie_walker())
-							);
-						endif;
-						?>
+					<?php get_breadcrumbs(); ?>
 				</nav>
 				<p class="show-for-small">
 					<a class='sidebar-button button' id="sidebarButton" href="#sidebar-off" >Menu</a>
