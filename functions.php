@@ -280,21 +280,22 @@ add_action('admin_init', 'presstrends');
 //Josh's functions:
 
 //bread crumbs
+//method from http://www.catswhocode.com/blog/how-to-breadcrumb-function-for-wordpress
 function the_breadcrumb() {
 	if (!is_home()) {
-		echo '<a href="';
+		echo '<ul class="breadcrumbs"><li><a href="';
 		echo get_option('home');
 		echo '">';
 		bloginfo('name');
-		echo "</a> Â» ";
+		echo "</a></li>";
 		if (is_category() || is_single()) {
-			the_category('title_li=');
+			the_category('<li>');
 			if (is_single()) {
-				echo " Â» ";
+				echo " ";
 				the_title();
 			}
 		} elseif (is_page()) {
-			echo the_title();
+			echo the_title('<li>');
 		}
 	}
 }
